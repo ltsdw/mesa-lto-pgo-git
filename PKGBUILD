@@ -2,7 +2,7 @@
 
 _pkgbuild_dir=$PWD
 
-_mesa_commit="#commit=3c0f349a"
+_mesa_commit="#commit=3f11ae93"
 
 PGO="off" # possible values are ("generate", "use", "off")
 _march="" # processor architeture, leave empty if unkown
