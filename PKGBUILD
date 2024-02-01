@@ -2,7 +2,7 @@
 
 _pkgbuild_dir=$PWD
 
-_mesa_commit="#commit=87d31cad"
+_mesa_commit="#commit=ec4990ef"
 
 PGO="off" # possible values are ("generate", "use", "off")
 _march="" # processor architeture, leave empty if unkown
@@ -27,7 +27,7 @@ source "$_pkgbuild_dir/scripts/utils/directories"
 
 pkgname=mesa-lto-pgo-git
 
-pkgver=21.3.0_devel.f376597d00d_generate
+pkgver=24.1.0_devel.ec4990ef419_off
 
 pkgrel=1
 
