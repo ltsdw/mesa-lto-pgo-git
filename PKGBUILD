@@ -2,7 +2,7 @@
 
 _pkgbuild_dir=$PWD
 
-_mesa_commit="#commit=ec4990ef"
+_mesa_commit="#commit=f3fe1f2f"
 
 PGO="off" # possible values are ("generate", "use", "off")
 _march="" # processor architeture, leave empty if unkown
@@ -27,28 +27,30 @@ source "$_pkgbuild_dir/scripts/utils/directories"
 
 pkgname=mesa-lto-pgo-git
 
-pkgver=24.1.0_devel.ec4990ef419_off
+pkgver=24.1.0_devel.f3fe1f2f18d_off
 
 pkgrel=1
 
 arch=('x86_64')
 
 makedepends=('git' 'python-mako' 'xorgproto'
-              'libxml2' 'libx11'  'libvdpau' 'libva' 'elfutils' 'libxrandr'
-              'ocl-icd' 'wayland-protocols' 'meson' 'ninja' 'glslang'
+              'libxml2' 'libvdpau' 'libva' 'elfutils' 'libxrandr'
+              'ocl-icd' 'wayland-protocols' 'meson' 'ninja' 'glslang' 'spirv-tools'
+              'spirv-llvm-translator'
             )
 
 depends=('libdrm' 'libxxf86vm' 'libxdamage' 'libxshmfence' 'libelf'
-         'libomxil-bellagio' 'libunwind' 'libglvnd' 'wayland' 'lm_sensors' 'libclc' 'vulkan-icd-loader' 'zstd' 'expat'
+         'libomxil-bellagio' 'libunwind' 'libglvnd' 'wayland' 'lm_sensors' 'libclc'
+         'libx11' 'vulkan-icd-loader' 'zstd' 'expat'
         )
 
 optdepends=('opengl-man-pages: for the OpenGL API man pages')
 
-provides=('opencl-mesa' 'vulkan-intel' 'vulkan-radeon' 'vulkan-mesa-layer' 'libva-mesa-driver' 'mesa-vdpau'
+provides=('opencl-mesa' 'vulkan-intel' 'vulkan-radeon' 'vulkan-mesa-layers' 'libva-mesa-driver' 'mesa-vdpau'
           'vulkan-swrast' 'vulkan-driver' 'opengl-driver' 'opencl-driver'
          )
 
-conflicts=('mesa' 'opencl-mesa' 'vulkan-intel' 'vulkan-radeon' 'vulkan-mesa-layer' 'libva-mesa-driver' 'mesa-vdpau' 'vulkan-swrast')
+conflicts=('mesa' 'opencl-mesa' 'vulkan-intel' 'vulkan-radeon' 'vulkan-mesa-layers' 'libva-mesa-driver' 'mesa-vdpau' 'vulkan-swrast')
 
 url="https://www.mesa3d.org"
 
