@@ -26,7 +26,7 @@ _no_pgo_build()
         -D gbm='enabled'                                                                    \
         -D gles1='disabled'                                                                 \
         -D gles2='enabled'                                                                  \
-        -D glvnd='true'                                                                     \
+        -D glvnd='enabled'                                                                  \
         -D glx='dri'                                                                        \
         -D libunwind='enabled'                                                              \
         -D llvm='enabled'                                                                   \
@@ -73,7 +73,7 @@ _generate_pgo_build()
         -D gbm='enabled'                                                                    \
         -D gles1='disabled'                                                                 \
         -D gles2='enabled'                                                                  \
-        -D glvnd='true'                                                                     \
+        -D glvnd='enabled'                                                                  \
         -D glx='dri'                                                                        \
         -D libunwind='enabled'                                                              \
         -D llvm='enabled'                                                                   \
@@ -120,7 +120,7 @@ _use_pgo_build()
         -D gbm='enabled'                                                                    \
         -D gles1='disabled'                                                                 \
         -D gles2='enabled'                                                                  \
-        -D glvnd='true'                                                                     \
+        -D glvnd='enabled'                                                                  \
         -D glx='dri'                                                                        \
         -D libunwind='enabled'                                                              \
         -D llvm='enabled'                                                                   \

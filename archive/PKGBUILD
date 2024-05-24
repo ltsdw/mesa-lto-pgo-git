@@ -2,7 +2,7 @@
 
 _pkgbuild_dir=$PWD
 
-_mesa_commit="#commit=f3fe1f2f"
+_mesa_commit="#commit=485d56ed"
 
 PGO="off" # possible values are ("generate", "use", "off")
 _march="tigerlake" # processor architeture, leave empty if unkown
@@ -27,14 +27,14 @@ source "$_pkgbuild_dir/scripts/utils/directories"
 
 pkgname=mesa-lto-pgo-git
 
-pkgver=24.1.0_devel.f3fe1f2f18d_off
+pkgver=24.2.0_devel.485d56ed816_off
 
 pkgrel=1
 
 arch=('x86_64')
 
 makedepends=('git' 'python-mako' 'xorgproto' 'libxml2' 'elfutils' 'libxrandr'
-'llvm' 'clang' 'meson' 'ninja' 'glslang' 'spirv-tools' 'spirv-llvm-translator' 'python-ply')
+'llvm' 'clang' 'meson' 'ninja' 'glslang' 'python-ply' 'cbindgen' 'cmake' 'python-packaging')
 
 depends=('libdrm' 'libxxf86vm' 'libxdamage' 'libxshmfence' 'libelf' 'libglvnd' 'libclc'
 'libx11' 'zstd' 'expat' 'llvm-libs')
@@ -56,6 +56,8 @@ source=("mesa::git+https://gitlab.freedesktop.org/mesa/mesa.git$_mesa_commit"
 sha256sums=('SKIP'
             '7fdc119cf53c8ca65396ea73f6d10af641ba41ea1dd2bd44a824726e01c8b3f2'
            )
+
+options=(!debug)
 
 ##############################################################################
 
