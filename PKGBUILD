@@ -2,7 +2,7 @@
 
 _pkgbuild_dir=$PWD
 
-_mesa_commit="#commit=ae3e0ae2"
+_mesa_commit="#commit=ab72be6c"
 
 PGO="off" # possible values are ("generate", "use", "off")
 _march="" # processor architeture, leave empty if unkown
@@ -36,7 +36,7 @@ arch=('x86_64')
 makedepends=('git' 'python-mako' 'xorgproto'
               'libxml2' 'libvdpau' 'libva' 'elfutils' 'libxrandr'
               'ocl-icd' 'wayland-protocols' 'meson' 'ninja' 'glslang' 'cbindgen' 'cmake' 'python-packaging'
-              'spirv-tools' 'spirv-llvm-translator'
+              'python-pyaml' 'spirv-tools' 'spirv-llvm-translator'
             )
 
 depends=('libdrm' 'libxxf86vm' 'libxdamage' 'libxshmfence' 'libelf'

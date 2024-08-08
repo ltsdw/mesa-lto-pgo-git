@@ -11,8 +11,8 @@ _no_pgo_build()
         --wrap-mode='nofallback'                                                    \
         -D prefix='/usr'                                                            \
         -D sysconfdir='/etc'                                                        \
-        -D platforms='x11'                                                          \
-        -D gallium-drivers='iris','swrast','virgl'                                  \
+        -D platforms='x11,wayland'                                                  \
+        -D gallium-drivers='iris','llvmpipe','virgl'                                \
         -D vulkan-drivers='intel'                                                   \
         -D shader-cache='enabled'                                                   \
         -D dri3='enabled'                                                           \
@@ -26,7 +26,7 @@ _no_pgo_build()
         -D gbm='enabled'                                                            \
         -D gles1='disabled'                                                         \
         -D gles2='enabled'                                                          \
-        -D glvnd='true'                                                             \
+        -D glvnd='enabled'                                                          \
         -D glx='dri'                                                                \
         -D libunwind='disabled'                                                     \
         -D llvm='enabled'                                                           \
@@ -59,8 +59,8 @@ _generate_pgo_build()
         -D prefix='/usr'                                                            \
         -D sysconfdir='/etc'                                                        \
         -D dri-drivers=[]                                                           \
-        -D platforms='x11'                                                          \
-        -D gallium-drivers='iris','swrast','virgl'                                  \
+        -D platforms='x11,wayland'                                                  \
+        -D gallium-drivers='iris','llvmpipe','virgl'                                \
         -D vulkan-drivers='intel'                                                   \
         -D shader-cache='enabled'                                                   \
         -D dri3='enabled'                                                           \
@@ -74,7 +74,7 @@ _generate_pgo_build()
         -D gbm='enabled'                                                            \
         -D gles1='disabled'                                                         \
         -D gles2='enabled'                                                          \
-        -D glvnd='true'                                                             \
+        -D glvnd='enabled'                                                          \
         -D glx='dri'                                                                \
         -D libunwind='disabled'                                                     \
         -D llvm='enabled'                                                           \
@@ -107,8 +107,8 @@ _use_pgo_build()
         -D prefix='/usr'                                                            \
         -D sysconfdir='/etc'                                                        \
         -D dri-drivers=[]                                                           \
-        -D platforms='x11'                                                          \
-        -D gallium-drivers='iris','swrast','virgl'                                  \
+        -D platforms='x11,wayland'                                                  \
+        -D gallium-drivers='iris','llvmpipe','virgl'                                \
         -D vulkan-drivers='intel'                                                   \
         -D shader-cache='enabled'                                                   \
         -D dri3='enabled'                                                           \
@@ -122,7 +122,7 @@ _use_pgo_build()
         -D gbm='enabled'                                                            \
         -D gles1='disabled'                                                         \
         -D gles2='enabled'                                                          \
-        -D glvnd='true'                                                             \
+        -D glvnd='enabled'                                                          \
         -D glx='dri'                                                                \
         -D libunwind='disabled'                                                     \
         -D llvm='enabled'                                                           \
