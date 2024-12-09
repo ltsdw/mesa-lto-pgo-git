@@ -2,12 +2,12 @@
 
 NINJAFLAGS="-d stats -w phonycycle=err"
 
-if ! [ -z "$_march" ]; then
-    march="-march=$_march"
+if ! [ -z "${_march}" ]; then
+    march="-march=${_march}"
 fi
 
 export CC="gcc -Wno-missing-profile -Wno-nonnull-compare"
 export CXX="g++ -Wno-missing-profile -Wno-nonnull-compare"
-export CFLAGS="$march -Ofast -falign-functions=32 -fno-semantic-interposition -mprefer-vector-width=256"
-export CXXFLAGS="$march -Ofast -falign-functions=32 -fno-semantic-interposition -mprefer-vector-width=256"
+export CFLAGS="${march} -Ofast -falign-functions=32 -fno-semantic-interposition -mprefer-vector-width=256"
+export CXXFLAGS="${march} -Ofast -falign-functions=32 -fno-semantic-interposition -mprefer-vector-width=256"
 export LDFLAGS="-Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now"
