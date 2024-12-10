@@ -109,6 +109,7 @@ _write_native_file()
         _native_clang
     else
         export _native_file="${startdir}/gcc.native"
+
         _c_args+=("'-flto',")
         _c_link_args+=("'-flto',")
 

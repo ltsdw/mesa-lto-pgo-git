@@ -12,6 +12,8 @@ _endianess="little" # possible values are ("little", "big")
 _cpu_microarchitecture="" # processor architeture, ("bulldozer", "znver1", "sandybridge", etc) leave empty if unknown
 _avx="" # which avx instrunctions to be used, leave empty if unknown
 
+##############################################################################
+
 # adapt the naming depeding on the compiled type
 if [ "${_pgo}" != "off" ]; then
     pkgdesc='an open-source implementation of the OpenGL specification, compiled with LTO and PGO. Git version'
