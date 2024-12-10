@@ -1,9 +1,45 @@
 #! /hint/sh
 
+_set_number_of_fds()
+{
+    DEFAULT_FD_NUMBER=$(ulimit -n)
+    ulimit -n 8192
+}
+
+_write_native_file()
+{
+    if [ "${_use_clang}" ]; then
+		cat <<-EOF > "${startdir}/clang.native"
+			#! /hint/toml
+
+			[binaries]
+			c = '/usr/bin/clang'
+			cpp = '/usr/bin/clang++'
+			ar = '/usr/bin/llvm-ar'
+			strip = '/usr/bin/llvm-strip'
+			llvm-config = '/usr/bin/llvm-config'
+			pkg-config = '/usr/bin/pkg-config'
+		EOF
+    else
+		cat <<-EOF > "${startdir}/gcc.native"
+			#! /hint/toml
+
+			[binaries]
+			c = '/usr/bin/gcc'
+			cpp = '/usr/bin/g++'
+			ar = '/usr/bin/ar'
+			strip = '/usr/bin/strip'
+			llvm-config = '/usr/bin/llvm-config'
+			pkg-config = '/usr/bin/pkg-config'
+		EOF
+    fi
+}
+
 _no_pgo_build()
 {
     meson setup mesa _build                                                                             \
         --strip                                                                                         \
+        --native-file "${NATIVE_FILE}"                                                                  \
         -D b_ndebug='true'                                                                              \
         -D b_lto='true'                                                                                 \
         -D buildtype='plain'                                                                            \
@@ -47,6 +83,7 @@ _generate_pgo_build()
 {
     meson setup mesa "${pgo_build_dir}"                                                                 \
         --strip                                                                                         \
+        --native-file "${NATIVE_FILE}"                                                                  \
         -D b_ndebug='true'                                                                              \
         -D b_lto='true'                                                                                 \
         -D b_pgo='generate'                                                                             \
@@ -91,6 +128,7 @@ _use_pgo_build()
 {
     meson setup mesa "${pgo_build_dir}"                                                                 \
         --strip                                                                                         \
+        --native-file "${NATIVE_FILE}"                                                                  \
         -D b_ndebug='true'                                                                              \
         -D b_lto='true'                                                                                 \
         -D b_pgo='use'                                                                                  \
