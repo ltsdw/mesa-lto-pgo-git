@@ -2,8 +2,8 @@
 
 _ninja_install()
 {
-    if [ "${PGO}" != "off" ]; then
-        DESTDIR="${pkgdir}" ninja ${NINJAFLAGS} -C "${pgo_build_dir}" install
+    if [ "${_pgo}" != "off" ]; then
+        DESTDIR="${pkgdir}" ninja ${NINJAFLAGS} -C "${_pgo_build_dir}" install
     else
         DESTDIR="${pkgdir}" ninja ${NINJAFLAGS} -C _build install
     fi
