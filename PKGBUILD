@@ -23,7 +23,7 @@ fi
 
 # add clang as a dependency if needed
 if [ ! -z "${_use_clang}" ]; then
-    makedepends+=('clang')
+    makedepends+=('clang' 'llvm' 'llvm-libs' 'lld')
 fi
 
 ##############################################################################
