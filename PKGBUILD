@@ -57,8 +57,8 @@ depends=(
 optdepends=('opengl-man-pages: for the OpenGL API man pages')
 
 provides=(
-    'opencl-mesa' 'vulkan-intel' 'vulkan-radeon' 'vulkan-mesa-layers' 'libva-mesa-driver' 'mesa-vdpau'
-    'vulkan-swrast' 'vulkan-driver' 'opengl-driver' 'opencl-driver'
+    'mesa' 'opencl-mesa' 'vulkan-intel' 'vulkan-radeon' 'vulkan-mesa-layers'
+    'libva-mesa-driver' 'mesa-vdpau' 'vulkan-swrast' 'vulkan-driver' 'opengl-driver' 'opencl-driver'
 )
 
 conflicts=('mesa' 'opencl-mesa' 'vulkan-intel' 'vulkan-radeon' 'vulkan-mesa-layers' 'libva-mesa-driver' 'mesa-vdpau' 'vulkan-swrast')
